@@ -1,0 +1,6 @@
+region,disease_prevalence
+North,"malaria:0.3,diarrhea:0.2,ARI:0.1"
+South,"malaria:0.1,diarrhea:0.3,ARI:0.2"
+East,"malaria:0.2,diarrhea:0.1,ARI:0.3"
+West,"malaria:0.25,diarrhea:0.15,ARI:0.25"
+Kigali,"malaria:0.05,diarrhea:0.1,ARI:0.05"
