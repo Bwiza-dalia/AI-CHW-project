@@ -1,5 +1,8 @@
 from typing import Dict, List
-from .utils import normalize_text, get_text_embedding, cosine_similarity
+try:
+    from .utils import normalize_text, get_text_embedding, cosine_similarity
+except ImportError:
+    from src.models.utils import normalize_text, get_text_embedding, cosine_similarity
 import re
 import os
 import pandas as pd

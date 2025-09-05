@@ -1,8 +1,22 @@
 import streamlit as st
-from src.models.grading import grade_answer
-from src.models.content import summarize, diagram_prompt, qa_over_content, adaptation_suggestions, generate_concept_diagram
-from src.models.recommend import recommend_modules
-from src.models.analytics import compute_analytics
+import sys
+import os
+
+# Add the project root to Python path for cloud deployment
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
+try:
+    from src.models.grading import grade_answer
+    from src.models.content import summarize, diagram_prompt, qa_over_content, adaptation_suggestions, generate_concept_diagram
+    from src.models.recommend import recommend_modules
+    from src.models.analytics import compute_analytics
+except ImportError as e:
+    st.error(f"Import error: {e}")
+    st.error("Please ensure all required modules are available.")
+    st.stop()
+
 import altair as alt
 import pandas as pd
 

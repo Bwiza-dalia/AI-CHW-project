@@ -1,5 +1,8 @@
 from typing import Dict, List
-from .utils import normalize_text, get_text_embedding, cosine_similarity, expand_with_synonyms
+try:
+    from .utils import normalize_text, get_text_embedding, cosine_similarity, expand_with_synonyms
+except ImportError:
+    from src.models.utils import normalize_text, get_text_embedding, cosine_similarity, expand_with_synonyms
 import numpy as np
 import os
 import re
